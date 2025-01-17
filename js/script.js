@@ -1,22 +1,23 @@
 'use strict';
 
-//* 1
-function getName(name) {
-    return `Привет, ${name}`;
-}
-//* 2
-function returnNeighboringNumbers(num) {
-    return [num - 1, num, num + 1];
-}
-//* 3
-function getMathResult(a, b) {
-    if (typeof(b) !== "number" || b <= 0) return a;
-    let result = "";
-    let num = a;
-    for (let i = 0; i < b; i++) {
-        result += (i === 0) ? num : `---${num}`;
-        num += a;
+//* fibonacci
+function fibonacci(num) {
+
+    if (num % 1 !== 0 || num <= 0 || typeof num !== "number") return "";
+    if (num === 1) {
+        return "0";
+    } else if (num === 2) {
+        return "0 1"
+    } else {
+        let res = "0 1";
+        let a = 0, b = 1, sum;
+        for (let i = 0; i < (num - 2); i++) {
+            sum = a + b;
+            res += ` ${sum}`;
+            a = b;
+            b = sum;
+        }
+        return res;
     }
-    return result;
 }
-console.log(getMathResult(10, 5));
+console.log(fibonacci(10));
