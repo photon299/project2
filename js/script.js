@@ -13,63 +13,48 @@
 // arr.forEach(function(item, index, array) {...})  перебор всех элементов
 //*
 
-//* 10
-const personalPlanPeter = {
-    name: "Peter",
-    age: "29",
-    skills: {
-        languages: ['ru', 'eng'],
-        programmingLangs: {
-            js: '20%',
-            php: '10%',
-        },
-        exp: '1 month'
-    },
-    showAgeAndLangs: function(obj) {
-        const {age, skills} = obj;
-        return `Мне ${age} и я владею языками: ${skills.languages.join(" ").toUpperCase()}`;
-    },
-};
-function showExperience(plan) {
-    const {exp} = plan.skills;
-    return exp;
-}
-function showProgrammingLangs(plan) {
-    const {programmingLangs} = plan.skills;
-    let res = ``;
-    for (let key in programmingLangs) {
-        res += `Язык ${key} изучен на ${programmingLangs[key]} \n`
-    }
-    return res;
-}
-//* 11
-const family = ['Peter', 'Ann', 'Alex', 'Linda'];
-function showFamily(arr) {
-    return (arr.length === 0) ? "Семья пуста" : `Семья состоит из: ${arr.join(" ")}`;
-}
-const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
-function standardizeStrings(arr) {
-    for (let i of arr) console.log(i.toLowerCase());
-}
-//* 12
-const someString = 'This is some strange string';
-function reverse(str) {
-    if (typeof str !== "string") return "Ошибка!";
-    let result = "";
-    for (let i = 0; i < str.length; i++){
-        result += str[str.length - i - 1];
-    }
-    return result;
-}
-const baseCurrencies = ['USD', 'EUR'];
-const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+//* 35. Основы ООП, прототипно-ориентированное наследование
 
-function availableCurr(arr, missingCurr) {
-    if (arr.length === 0) return "Нет доступных валют";
-    let result = "Доступные валюты:\n";
-    for (let curr of arr) {
-        if (curr !== missingCurr) result += curr + "\n"
-    }
-    return result
-}
-console.log(availableCurr([...baseCurrencies, ...additionalCurrencies], "CNY"));
+// const soldier = {
+//     health: 400,
+//     armor: 100,
+//     sayHello: function() {
+//         console.log("Hello");
+//     },
+// };
+// const john = Object.create(soldier);
+// console.log(john.armor);
+
+//! 41. Получение элементов со страницы
+//* document.getElementById('id');
+//* document.getElementsByTagName('class');
+//* document.getElementsByClassName('class');
+//* document.querySelector('name/.class/id');
+//* document.createElement("name");
+//* elem.classList.add("class");
+//* document.body.append/prepend(elem)
+//* elem.before()/after()
+//* elem.remove()
+//* elem.replaceWith(elem2)
+//* elem.appendChild(elem2)
+//* elem.innerHTML = 
+//* elem.insertAdjacentHTML("where", "what")
+//*
+
+//* 42. Действия с элементами на странице
+const box = document.getElementById('box'),
+      btns = document.getElementsByTagName("button"),
+      circles = document.getElementsByClassName("circle"),
+      wrapper = document.querySelector(".wrapper"),
+      hearts = wrapper.querySelectorAll(".heart"),
+      oneHeart = wrapper.querySelector(".heart");
+
+
+const div = document.createElement("div");
+div.classList.add("black");
+document.body.append(div);
+div.style.width = "200px";
+
+div.innerHTML = "<h1>Hello World!</h1>";
+
+div.insertAdjacentHTML("beforebegin", "<h2>Hello</h2>");
