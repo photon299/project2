@@ -1,60 +1,52 @@
 'use strict';
 
-//* 31 Объекты, деструктуризация объектов (ES6)
-// delete obj.key - удаление свойства объекта
-// Object.keys() - создает массив с ключами объекта
-//*
+//! Objects
+//* delete obj.key;
+//* Object.keys();
+//* Object.values();
+//* Object.entries()
 
-//* 32. Массивы и псевдомассивы
-// arr.pop(); - Удаление с конца массива
-// arr.push(a) - Добавление в конец массива
-// arr.shift() - Удаление с начала массива
-// arr.unshift(a) - добавление в начало массива
-// arr.forEach(function(item, index, array) {...})  перебор всех элементов
-//*
 
-//* 35. Основы ООП, прототипно-ориентированное наследование
+//! Arrays
+//* arr.pop();
+//* arr.push(value);
+//* arr.shift();
+//* arr.unshift(value);
+//* arr.forEach(function(item, index, array) {...})
 
-// const soldier = {
-//     health: 400,
-//     armor: 100,
-//     sayHello: function() {
-//         console.log("Hello");
-//     },
-// };
-// const john = Object.create(soldier);
-// console.log(john.armor);
 
-//! 41. Получение элементов со страницы
+//! DOM
 //* document.getElementById('id');
-//* document.getElementsByTagName('class');
+//* document.getElementsByTagName('div');
 //* document.getElementsByClassName('class');
-//* document.querySelector('name/.class/id');
+//* document.querySelectorAll('tag/.class/id');
+//* document.querySelector("[data-type='value']");
 //* document.createElement("name");
 //* elem.classList.add("class");
 //* document.body.append/prepend(elem)
 //* elem.before()/after()
-//* elem.remove()
-//* elem.replaceWith(elem2)
-//* elem.appendChild(elem2)
-//* elem.innerHTML = 
-//* elem.insertAdjacentHTML("where", "what")
-//*
+//* elem.remove();
+//* elem.replaceWith(elem2);
+//* elem.appendChild(elem2);
+//* elem.innerHTML = value;
+//* elem.insertAdjacentHTML("where", `html`);
+//* elem.addEventListener("what", () => {})
+//* "click" "mouseenter"
+//* event.type/target
+//* event.preventDefault()
+//* elem.childNodes()
+//* elem.firstChild/lastChild
+//* elem.firstElementChild/lastElementChild
+//* elem.parentNode
+//* elem.parentElement
+//* elem.previousSibling/nextSibling
+//* elem.previousElementSibling/nextElementSibling
+//* "touchstart" "touchmove" "touchend" "touchenter"/"touchleave" "touchcancel"
+//* event.touches / event.targetTouches / event.changedTouches
 
-//* 42. Действия с элементами на странице
-const box = document.getElementById('box'),
-      btns = document.getElementsByTagName("button"),
-      circles = document.getElementsByClassName("circle"),
-      wrapper = document.querySelector(".wrapper"),
-      hearts = wrapper.querySelectorAll(".heart"),
-      oneHeart = wrapper.querySelector(".heart");
+const p = document.querySelectorAll("p");
+console.log(p);
 
-
-const div = document.createElement("div");
-div.classList.add("black");
-document.body.append(div);
-div.style.width = "200px";
-
-div.innerHTML = "<h1>Hello World!</h1>";
-
-div.insertAdjacentHTML("beforebegin", "<h2>Hello</h2>");
+const script = document.createElement("script");
+script.src = "js/test.js";
+document.body.append(script);
